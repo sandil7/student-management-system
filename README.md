@@ -43,4 +43,23 @@ python studentmanagement.py
 - Add GUI using Tkinter or PyQt  
 - Add database support using SQLite  
 - Add login system for admin access  
-- Convert into a Flask web application  
+- Convert into a Flask web application 
+
+---
+
+## 📸 Project Screenshots
+
+### Main Menu
+![Main Menu](menu.png)
+
+### Student List
+![Student List](view.png)
+
+### Add Student
+![Add Student](add.png)
+
+### Search Student
+![Search Student](search.png)
+
+### Delete Student
+![Delete Student](delete.png)
