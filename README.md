@@ -16,6 +16,8 @@ This project was built to practice Python fundamentals, file handling, and CRUD 
 - Update student information
 - Delete student record
 - Data stored permanently using JSON file
+- Input validation for name (letters only,no numbers or special character)
+- Input validation for roll number (numbers only)
 
 ---
 
@@ -39,11 +41,20 @@ python studentmanagement.py
 
 ---
 
+
+## 🔄 Recent Updates
+- Added input validation to ensure name contains letters only
+- Added input validation to ensure roll number contains numbers only
+- Students are now displayed in sorted order by roll number
+- Empty input checks added across all functions
+
+---
+
 ## 🚀 Future Improvements
 - Add GUI using Tkinter or PyQt  
 - Add database support using SQLite  
 - Add login system for admin access  
-- Convert into a Flask web application 
+- Flask web application version (in progress)
 
 ---
 

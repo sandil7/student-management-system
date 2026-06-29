@@ -14,15 +14,23 @@ def save_data():
 
 def add_student():
     name=input("Enter student name:").strip()
-    roll=input("Enter roll number:").strip()
-
     if not name:
         print("Error.Name cannot be empty")
         return
+    if not all(c.isalpha() or c.isspace() for c in name):
+        print("Error.Name should contain letters only.")
+        return
+    
+    roll=input("Enter roll number:").strip()
     if not roll:
         print("Error.Roll number cannot be empty.")
         return
-
+    
+    if not roll.isdigit():
+        print("Error.Roll should have numbers only.")
+        return
+    
+  
     for student in students:
         
         if student["roll"]==roll:
@@ -43,6 +51,8 @@ def view_student():
         print("No student found")
         return
     print("\nStudent list:")
+    
+    students.sort(key=lambda s: int(s['roll']))
 
     for i,student in enumerate(students,start=1):
         print(f"---------------------")
@@ -59,7 +69,9 @@ def search_student():
     if not roll:
         print("Error.Roll number cannot be empty.")
         return
-    
+    if not roll.isdigit():
+        print("Error.Roll should contain digit only.")
+        return
     for student in students:
         if student["roll"]==roll:
             print(f"Student found:{student['name']}")
@@ -72,6 +84,9 @@ def delete_student():
     
     if not roll:
         print("Error.Roll number cannot be empty.")
+        return
+    if not roll.isdigit():
+        print("Error.Roll should be digit only.")
         return
 
     for student in students:
@@ -87,12 +102,19 @@ def update_student():
     if not roll:
         print("Error.Roll cannot be empty.")
         return
+    if not roll.isdigit():
+        print("Error.Roll should be numbers only.")
+        return
     for student in students:
         if student["roll"]==roll:
             newname=input("enter new name:")
             if not newname:
                 print("Error.Newname cannot be empty.")
                 return
+            if not all(c.isalpha() or c.isspace() for c in newname):
+             print("Error. It should contain name only.")
+             return
+             
             student["name"]=newname
             save_data()
             print("student updated successfully")
